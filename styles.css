@@ -1,15 +1,31 @@
-.main-container{
-    
 
-    border: 2px solid black;
-    background-color: rgb(35, 35, 83);
-    border-radius: 5px;
-    width: 40vw;
-    height: 40vw;
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(207, 207, 235);
-}
+
+.main-container {
+    width: 90%; /* Take up 90% of the viewport width */
+    max-width: 400px; /* Maximum width for larger screens */
+    height: auto; /* Automatically adjust height */
+    margin: 0 auto; /* Center the div horizontally */
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #b11e1e;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  @media (min-width: 768px) {
+    .main-container {
+      width: 60%; /* Slightly reduce the width for larger screens */
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-container {
+      width: 100%; /* Full width for smaller screens */
+      padding: 10px;
+    }
+  }
+  .btn{
+    width: 90px;
+    height: 90px;
+  }
