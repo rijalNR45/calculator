@@ -24,54 +24,54 @@ numberTwo.addEventListener('click', () => {
     firstInput = 2;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberThree.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 3;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberFour.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 4;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberFive.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 5;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberSix.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 6;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberSeven.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 7;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberEight.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 8;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberNine.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 9;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+numberZero.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = 0;
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+signAdd.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = "+";
     displayingInput();
 })
-numberOne.addEventListener('click', () => {
+signMultiply.addEventListener('click', () => {
     console.log("clicked")
-    firstInput = 1;
+    firstInput = "*";
     displayingInput();
 })
 numberOne.addEventListener('click', () => {
