@@ -10,6 +10,7 @@
     border: 1px solid #b11e1e;
     border-radius: 10px;
     background-color: #f9f9f9;
+    
   }
   
   @media (min-width: 768px) {
@@ -26,6 +27,47 @@
     }
   }
   .btn{
-    width: 90px;
-    height: 90px;
+    width: 6rem;
+    height: 6rem;
   }
+  .display-screen {
+    height: 60px;
+    width: auto;
+    border: 2px solid black;
+  }
+  .btns {
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    margin: 2px;
+    gap: 2px;
+    
+.btn {
+    font-size: 2rem;
+    color: #041820;
+
+}
+
+  }
+  #zero {
+    width: 12rem;
+
+  }
+  .number {
+    background-color: #80CBC4;
+ }
+
+ .operations {
+    background-color: #ffb74d;
+
+ }
+ .ac-items {
+    background-color: #CE93D8;
+ }
+.rows {
+    display: flex;
+    justify-content: space-evenly;
+}
