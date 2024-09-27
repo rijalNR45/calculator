@@ -12,6 +12,11 @@
     background-color: #f9f9f9;
     
   }
+  .display-screen {
+    text-align: right;
+    font-size: 40px;
+    font-weight: 500;
+  }
   
   @media (min-width: 768px) {
     .main-container {
