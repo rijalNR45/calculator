@@ -16,7 +16,7 @@ buttonSelect.addEventListener('click', (e) =>{
         firstInput.push(inputsfor1);
         console.log("first input is:" + firstInput);    
        } 
-       else if(e.target.classList.contains("operations")) {
+    else if(e.target.classList.contains("operations")) {
         operation = e.target.innerText;
         console.log(operation);
         document.querySelectorAll(".btn.number").forEach(element => {
@@ -24,45 +24,49 @@ buttonSelect.addEventListener('click', (e) =>{
         });
         
        }
-        else if(e.target.classList.contains("secondInp")){
+    else if(e.target.classList.contains("secondInp")){
         let inputsfor2 = e.target.innerText;
         secondInput.push(inputsfor2);
         console.log("second input is:" + secondInput);
     }
-})
-    document.getElementById("equal").addEventListener('click', () =>{
-        convertIntoNumericValues(firstInput, secondInput);
-        operations(numericInp1, numericInp2, operation);
-        function operations(input1, input2, operator){
-            let result;
-
-            switch(operator){
-                case '+':
-                    result = input1 + input2;
-                    break;
-                case '-':
-                    result = input1 -input2;
-                    break;
-                case '*':
-                    result = input1 * input2;
-                    break;
-                case '/':
-                    if(input2 === 0) {
-                        result = 'lmao';
-                    } else {
-                        result = input1 / input2;
-                    }
-                    break;
-                default:
-                    result = 'Error: invalid operator';
+    else if(e.target.classList.contains("equals-to")){
+        document.getElementById("equal").addEventListener('click', () =>{
+            convertIntoNumericValues(firstInput, secondInput);
+            operations(numericInp1, numericInp2, operation);
+            function operations(input1, input2, operator){
+                let result;
+    
+                switch(operator){
+                    case '+':
+                        result = input1 + input2;
+                        break;
+                    case '-':
+                        result = input1 -input2;
+                        break;
+                    case '*':
+                        result = input1 * input2;
+                        break;
+                    case '/':
+                        if(input2 === 0) {
+                            result = 'lmao';
+                        } else {
+                            result = input1 / input2;
+                        }
+                        break;
+                    default:
+                        result = 'Error: invalid operator';
+                }
+                console.log(result);
+    
+                return result;
             }
-            console.log(result);
+    
+    })
+    };
+    
+    })
 
-            return result;
-        }
-
-})
-};
+}
     function convertIntoNumericValues(a, b){
    
     let concatenatedInp1 = a.join('');
@@ -79,29 +83,6 @@ buttonSelect.addEventListener('click', (e) =>{
     
    
    
-    // var input = e.target.innerText;
-    // inputField.innerText += input;
-    //     clickCount++;
-    //     if(clickCount === 1){
-    //         firstClick = e.target.innerText; 
-    //         inputField.innerText = firstClick;
-            
-    //          } 
-            
-    //     else if(clickCount ===2){
-
-    //         if(e.target.classList.contains("number")){
-    //             firstClick += e.target.innerText;
-    //         } else {
-    //             secondClick = e.target.innerText;
-    //         }
-            
-    //         console.log(secondClick);
-
-    //     }   else {
-    //         thirdClick = e.target.innerText;
-    //         console.log(thirdClick);
-
-    //     }
+   
 
 
