@@ -1,6 +1,8 @@
 const inputField = document.getElementById("input-field");
 const buttonSelect = document.querySelector(".btns");
 const equalsTo = document.querySelector(".equals");
+operate();
+function operate(){
 let firstInput = [0];
     let operation = null;
     let secondInput = [0];
@@ -24,6 +26,30 @@ buttonSelect.addEventListener('click', (e) =>{
         secondInput.push(input2);
         console.log("second input is:" + secondInput);
     }
+    performAdd();
+})
+
+    function performAdd(){
+    let concatenatedInp1 = firstInput.join('');
+    let numericInp1 = Number(concatenatedInp1);
+    console.log(numericInp1);
+
+    let concatenatedInp2 = firstInput.join('');
+    let numericInp2 = Number(concatenatedInp2);
+    console.log(numericInp2);
+    }
+    addition(numericInp1, numericInp2);
+}
+
+    function addition(){
+    if(operation === '+'){
+        let sum = (a, b) => {
+            return a + b;
+        };
+        console.log(sum);
+    }
+};
+    
     
    
    
@@ -51,5 +77,5 @@ buttonSelect.addEventListener('click', (e) =>{
     //         console.log(thirdClick);
 
     //     }
-})
+
 
