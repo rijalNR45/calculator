@@ -1,16 +1,19 @@
 const inputField = document.getElementById("input-field");
 const buttonSelect = document.querySelector(".btns");
 const equalsTo = document.querySelector(".equals");
-operate();
-function operate(){
+takeInputs();
+
+function takeInputs(){
 let firstInput = [0];
     let operation = null;
     let secondInput = [0];
+    var numericInp1 = 0;
+    var numericInp2 = 0;
 buttonSelect.addEventListener('click', (e) =>{
    
-    if(e.target.className === "btn number"){
-        let inputs = e.target.innerText;
-        firstInput.push(inputs);
+    if(e.target.className == "btn number"){
+        let inputsfor1 = e.target.innerText;
+        firstInput.push(inputsfor1);
         console.log("first input is:" + firstInput);    
        } 
        else if(e.target.classList.contains("operations")) {
@@ -22,34 +25,57 @@ buttonSelect.addEventListener('click', (e) =>{
         
        }
         else if(e.target.classList.contains("secondInp")){
-        let input2 = e.target.innerText;
-        secondInput.push(input2);
+        let inputsfor2 = e.target.innerText;
+        secondInput.push(inputsfor2);
         console.log("second input is:" + secondInput);
     }
-    performAdd();
 })
+    document.getElementById("equal").addEventListener('click', () =>{
+        convertIntoNumericValues(firstInput, secondInput);
+        operations(numericInp1, numericInp2, operation);
+        function operations(input1, input2, operator){
+            let result;
 
-    function performAdd(){
-    let concatenatedInp1 = firstInput.join('');
-    let numericInp1 = Number(concatenatedInp1);
+            switch(operator){
+                case '+':
+                    result = input1 + input2;
+                    break;
+                case '-':
+                    result = input1 -input2;
+                    break;
+                case '*':
+                    result = input1 * input2;
+                    break;
+                case '/':
+                    if(input2 === 0) {
+                        result = 'lmao';
+                    } else {
+                        result = input1 / input2;
+                    }
+                    break;
+                default:
+                    result = 'Error: invalid operator';
+            }
+            console.log(result);
+
+            return result;
+        }
+
+})
+};
+    function convertIntoNumericValues(a, b){
+   
+    let concatenatedInp1 = a.join('');
+    numericInp1 = Number(concatenatedInp1);
     console.log(numericInp1);
 
-    let concatenatedInp2 = firstInput.join('');
-    let numericInp2 = Number(concatenatedInp2);
+    let concatenatedInp2 = b.join('');
+    numericInp2 = Number(concatenatedInp2);
     console.log(numericInp2);
-    }
-    addition(numericInp1, numericInp2);
-}
 
-    function addition(){
-    if(operation === '+'){
-        let sum = (a, b) => {
-            return a + b;
-        };
-        console.log(sum);
-    }
-};
     
+    };
+
     
    
    
