@@ -1,22 +1,29 @@
 const inputField = document.getElementById("input-field");
 const buttonSelect = document.querySelector(".btns");
 const equalsTo = document.querySelector(".equals");
-let firstInput = 0;
-    let secondClick = null;
-    let thirdClick = null;
-    let clickCount  = 0;
+let firstInput = [0];
+    let operation = null;
+    let secondInput = [0];
 buttonSelect.addEventListener('click', (e) =>{
-    // console.log(e.target.innerText);
-    // console.log(e);
    
-    if(e.target.classList.contains("number")){
-        firstInput += e.target.innerText;
-        console.log(firstInput);    
+    if(e.target.className === "btn number"){
+        let inputs = e.target.innerText;
+        firstInput.push(inputs);
+        console.log("first input is:" + firstInput);    
        } 
        else if(e.target.classList.contains("operations")) {
-        secondInput = e.target.innerText;
-        console.log(secondInput);
+        operation = e.target.innerText;
+        console.log(operation);
+        document.querySelectorAll(".btn.number").forEach(element => {
+            element.classList.add("secondInp");
+        });
+        
        }
+        else if(e.target.classList.contains("secondInp")){
+        let input2 = e.target.innerText;
+        secondInput.push(input2);
+        console.log("second input is:" + secondInput);
+    }
     
    
    
