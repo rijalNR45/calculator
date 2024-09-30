@@ -1,3 +1,4 @@
+// not working properly :(
 const inputField = document.getElementById("input-field");
 const buttonSelect = document.querySelector(".btns");
 const equalsTo = document.querySelector(".equals");
