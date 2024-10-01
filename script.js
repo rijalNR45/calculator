@@ -10,12 +10,15 @@ function takeInputs(){
     let secondInput = [];
     const inputField = document.getElementById("input-field");
     var forDisplay = '';
+    var operationCount = 0;
     
 buttonSelect.addEventListener('click', (e) =>{
     if((e.target.classList.contains("number"))  || (e.target.classList.contains("operations"))) {
     forDisplay += (e.target.innerText);     //updating the input field display with the input of user
     inputField.innerText = forDisplay;
     }
+
+    
    //to reload the page when AC button is clicked
     if(e.target.id === 'ac') {
         location.reload();
@@ -29,6 +32,7 @@ buttonSelect.addEventListener('click', (e) =>{
     else if(e.target.classList.contains("operations")) {
         operation = e.target.innerText;
         console.log(operation);
+        operationCount = 1;
         // inputField.innerText += inputsfor1;
 
         document.querySelectorAll(".btn.number").forEach(element => {
