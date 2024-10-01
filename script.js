@@ -5,7 +5,7 @@ const equalsTo = document.querySelector(".equals");
 takeInputs();
 
 function takeInputs(){
-let firstInput = [0];
+    let firstInput = [0];
     let operation = null;
     let secondInput = [0];
     var numericInp1 = 0;
@@ -31,7 +31,7 @@ buttonSelect.addEventListener('click', (e) =>{
         console.log("second input is:" + secondInput);
     }
     else if(e.target.classList.contains("equals-to")){
-        document.getElementById("equal").addEventListener('click', () =>{
+        // document.getElementById("equal").addEventListener('click', () =>{
             convertIntoNumericValues(firstInput, secondInput);
             operations(numericInp1, numericInp2, operation);
             function operations(input1, input2, operator){
@@ -62,12 +62,12 @@ buttonSelect.addEventListener('click', (e) =>{
                 return result;
             }
     
-    })
+    }})
     };
     
-    })
+    
 
-}
+
     function convertIntoNumericValues(a, b){
    
     let concatenatedInp1 = a.join('');
