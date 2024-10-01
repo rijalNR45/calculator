@@ -8,10 +8,12 @@ function takeInputs(){
     let firstInput = [0];
     let operation = null;
     let secondInput = [0];
-    var numericInp1 = 0;
-    var numericInp2 = 0;
-buttonSelect.addEventListener('click', (e) =>{
    
+buttonSelect.addEventListener('click', (e) =>{
+    if(e.target.id === 'ac') {
+        location.reload();
+    }
+    
     if(e.target.className == "btn number"){
         let inputsfor1 = e.target.innerText;
         firstInput.push(inputsfor1);
@@ -32,8 +34,9 @@ buttonSelect.addEventListener('click', (e) =>{
     }
     else if(e.target.classList.contains("equals-to")){
         // document.getElementById("equal").addEventListener('click', () =>{
-            convertIntoNumericValues(firstInput, secondInput);
-            operations(numericInp1, numericInp2, operation);
+            var converted = convertIntoNumericValues(firstInput, secondInput);
+            var obtainedResult = operations(converted.numericInp1, converted.numericInp2, operation);
+            console.log("obtained Result is:" + obtainedResult);
             function operations(input1, input2, operator){
                 let result;
     
@@ -71,12 +74,14 @@ buttonSelect.addEventListener('click', (e) =>{
     function convertIntoNumericValues(a, b){
    
     let concatenatedInp1 = a.join('');
-    numericInp1 = Number(concatenatedInp1);
+    var numericInp1 = Number(concatenatedInp1);
     console.log(numericInp1);
 
     let concatenatedInp2 = b.join('');
-    numericInp2 = Number(concatenatedInp2);
+    var numericInp2 = Number(concatenatedInp2);
     console.log(numericInp2);
+
+    return{numericInp1, numericInp2};
 
     
     };
