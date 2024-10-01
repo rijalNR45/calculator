@@ -5,16 +5,17 @@ const equalsTo = document.querySelector(".equals");
 takeInputs();
 
 function takeInputs(){
-    let firstInput = [0];
+    let firstInput = [];
     let operation = null;
-    let secondInput = [0];
+    let secondInput = [];
     const inputField = document.getElementById("input-field");
-    var forDisplay = [0];
+    var forDisplay = '';
     
 buttonSelect.addEventListener('click', (e) =>{
+    if((e.target.classList.contains("number"))  || (e.target.classList.contains("operations"))) {
+    forDisplay += (e.target.innerText);     //updating the input field display with the input of user
     inputField.innerText = forDisplay;
-    var updateInp;
-
+    }
    //to reload the page when AC button is clicked
     if(e.target.id === 'ac') {
         location.reload();
@@ -23,13 +24,10 @@ buttonSelect.addEventListener('click', (e) =>{
     if(e.target.className == "btn number"){
         let inputsfor1 = e.target.innerText;
         firstInput.push(inputsfor1);
-        updateInputField(firstInput);
-        // inputField.innerText += inputsfor1;
         console.log("first input is:" + firstInput);    
        } 
     else if(e.target.classList.contains("operations")) {
         operation = e.target.innerText;
-        updateInp = operation;
         console.log(operation);
         // inputField.innerText += inputsfor1;
 
@@ -58,6 +56,9 @@ buttonSelect.addEventListener('click', (e) =>{
     
                 switch(operator){
                     case '+':
+                        if(input2 === 0) {
+                            result = 'fuck you';
+                        }  else
                         result = input1 + input2;
                         break;
                     case '-':
@@ -68,7 +69,7 @@ buttonSelect.addEventListener('click', (e) =>{
                         break;
                     case '/':
                         if(input2 === 0) {
-                            result = 'lmao';
+                            result = 'cannot divide by zero';
                         } else {
                             result = input1 / input2;
                         }
@@ -77,10 +78,10 @@ buttonSelect.addEventListener('click', (e) =>{
                         result = 'Error: invalid operator';
                 }
                 console.log(result);
-    
+                document.getElementById("output-field").innerText = result;
                 return result;
             }
-   forDisplay.push(updateInp);
+
 
     
     }})
@@ -106,8 +107,12 @@ buttonSelect.addEventListener('click', (e) =>{
     function updateInputField(newValue) {
 
         // Append the new value to the existing innerText
-        var concatenatedValue = concat(newValue);
+        if(inputField.innerText === 0){
+            inputField.innerText = '';
+        } else {
+        var concatenatedValue = newValue.join('');
         inputField.innerText += (concatenatedValue);
+        }
     }
 
     
