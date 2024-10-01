@@ -8,8 +8,14 @@ function takeInputs(){
     let firstInput = [0];
     let operation = null;
     let secondInput = [0];
-   
+    const inputField = document.getElementById("input-field");
+    var forDisplay = [0];
+    
 buttonSelect.addEventListener('click', (e) =>{
+    inputField.innerText = forDisplay;
+    var updateInp;
+
+   //to reload the page when AC button is clicked
     if(e.target.id === 'ac') {
         location.reload();
     }
@@ -17,11 +23,16 @@ buttonSelect.addEventListener('click', (e) =>{
     if(e.target.className == "btn number"){
         let inputsfor1 = e.target.innerText;
         firstInput.push(inputsfor1);
+        updateInputField(firstInput);
+        // inputField.innerText += inputsfor1;
         console.log("first input is:" + firstInput);    
        } 
     else if(e.target.classList.contains("operations")) {
         operation = e.target.innerText;
+        updateInp = operation;
         console.log(operation);
+        // inputField.innerText += inputsfor1;
+
         document.querySelectorAll(".btn.number").forEach(element => {
             element.classList.add("secondInp");
         });
@@ -29,9 +40,14 @@ buttonSelect.addEventListener('click', (e) =>{
        }
     else if(e.target.classList.contains("secondInp")){
         let inputsfor2 = e.target.innerText;
+        updateInp = inputsfor2;
         secondInput.push(inputsfor2);
+        // inputField.innerText = inputsfor1 + inputsfor2;
+
         console.log("second input is:" + secondInput);
     }
+    
+
     else if(e.target.classList.contains("equals-to")){
         // document.getElementById("equal").addEventListener('click', () =>{
             var converted = convertIntoNumericValues(firstInput, secondInput);
@@ -64,6 +80,8 @@ buttonSelect.addEventListener('click', (e) =>{
     
                 return result;
             }
+   forDisplay.push(updateInp);
+
     
     }})
     };
@@ -85,6 +103,12 @@ buttonSelect.addEventListener('click', (e) =>{
 
     
     };
+    function updateInputField(newValue) {
+
+        // Append the new value to the existing innerText
+        var concatenatedValue = concat(newValue);
+        inputField.innerText += (concatenatedValue);
+    }
 
     
    
