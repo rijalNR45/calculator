@@ -1,6 +1,6 @@
     let num1, operator, num2;
-    const inputField = document.getElementById("input-field");
-    const outputField = document.getElementById("output-field");
+    const outputField = document.getElementById("input-field");
+    const inputField = document.getElementById("output-field");
     const numButtons = document.querySelectorAll(".number");
     const operatorButtons = document.querySelectorAll(".operations");
     const equalsTo = document.getElementById("equal");

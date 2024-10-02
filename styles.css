@@ -1,4 +1,6 @@
-
+body {
+  background-color: #B9B4C7;
+}
 
 .main-container {
     width: 90%; /* Take up 90% of the viewport width */
@@ -9,8 +11,27 @@
     box-sizing: border-box;
     border: 1px solid #b11e1e;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #7E6363;
     
+  }
+  .display-screen {
+    text-align: right;
+    font-size: 40px;
+    font-weight: 500;
+    height: 70px;
+    background-color: #3C3D37;
+  }
+  #input-field {
+    text-align: right;
+    font-size: 20px;
+    color: #ECDFCC;
+  }
+
+
+  #output-field {
+    text-align: right;
+    font-size: 35px;
+    color: #EEEEEE;
   }
   
   @media (min-width: 768px) {
