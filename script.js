@@ -1,6 +1,6 @@
     let num1, operator, num2;
-    const outputField = document.getElementById("input-field");
-    const inputField = document.getElementById("output-field");
+    const outputField = document.querySelector(".input-display");
+    const inputField = document.querySelector(".operation-display");
     const numButtons = document.querySelectorAll(".number");
     const operatorButtons = document.querySelectorAll(".operations");
     const equalsTo = document.getElementById("equal");
@@ -57,9 +57,6 @@
             case '%':
                 return percent(input1);
                 break;
-            default:
-                return 'Please enter valid operator'
-                break;
             }       
         }
 
@@ -98,6 +95,8 @@
     function calculateResult(event) {
         if(num2 != null) {
             outputField.textContent += `${num2} =`;
+            num1 = operate(num1, num2, operator);
+            // populateOperationDisplay.textContent += `${num2} =`;
             num2 = null;
             inputCount = 0;
         }
@@ -117,7 +116,7 @@
     }
 
     function delLastInput(event) {
-        inputField.textContent = inputDisplay.textContent.slice(0, inputField.textContent.length -1);
+        inputField.textContent = inputField.textContent.slice(0, inputField.textContent.length -1);
         if(inputCount < 1) {
             num1 = Number(inputField.textContent);
         } else {

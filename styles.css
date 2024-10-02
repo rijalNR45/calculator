@@ -54,6 +54,8 @@ body {
   .display-screen {
     height: 60px;
     width: auto;
+    margin-left: 1.4vw;
+    margin-right: 1.4vw;
     border: 2px solid black;
   }
   .btns {
