@@ -51,7 +51,6 @@ buttonSelect.addEventListener('click', (e) =>{
     
 
     else if(e.target.classList.contains("equals-to")){
-        // document.getElementById("equal").addEventListener('click', () =>{
             var converted = convertIntoNumericValues(firstInput, secondInput);
             var obtainedResult = operations(converted.numericInp1, converted.numericInp2, operation);
             console.log("obtained Result is:" + obtainedResult);
@@ -60,7 +59,7 @@ buttonSelect.addEventListener('click', (e) =>{
     
                 switch(operator){
                     case '+':
-                        if(input2 === 0) {
+                        if(input2.length === 0  ) {
                             result = 'fuck you';
                         }  else
                         result = input1 + input2;
@@ -89,7 +88,8 @@ buttonSelect.addEventListener('click', (e) =>{
 
     
     }})
-    };
+}
+    
     
     
 
@@ -111,12 +111,12 @@ buttonSelect.addEventListener('click', (e) =>{
     function updateInputField(newValue) {
 
         // Append the new value to the existing innerText
-        if(inputField.innerText === 0){
-            inputField.innerText = '';
-        } else {
-        var concatenatedValue = newValue.join('');
+        // if(inputField.innerText === 0){
+        //     inputField.innerText = '';
+        // } else {
+        // var concatenatedValue = newValue.join('');
         inputField.innerText += (concatenatedValue);
-        }
+        //}
     }
 
     
