@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-
-body {
-  background-color: #B9B4C7;
-}
-=======
 body {
   background-color: #B9B4C7;
 }
 
->>>>>>> spagetti-calc
 .main-container {
     width: 90%; /* Take up 90% of the viewport width */
     max-width: 400px; /* Maximum width for larger screens */
@@ -33,21 +26,14 @@ body {
     font-size: 20px;
     color: #ECDFCC;
   }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> spagetti-calc
   #output-field {
     text-align: right;
     font-size: 35px;
     color: #EEEEEE;
   }
-<<<<<<< HEAD
-
-=======
   
->>>>>>> spagetti-calc
   @media (min-width: 768px) {
     .main-container {
       width: 60%; /* Slightly reduce the width for larger screens */
