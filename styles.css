@@ -3,13 +3,15 @@ body {
 }
 
 .main-container {
+  display: flex;
+  flex-direction: column;
     width: 90%; /* Take up 90% of the viewport width */
     max-width: 400px; /* Maximum width for larger screens */
     height: auto; /* Automatically adjust height */
     margin: 0 auto; /* Center the div horizontally */
     padding: 20px;
     box-sizing: border-box;
-    border: 1px solid #b11e1e;
+    border: 15px solid rgb(37, 20, 20);
     border-radius: 10px;
     background-color: #7E6363;
     
@@ -41,16 +43,16 @@ body {
     }
   }
   
-  @media (max-width: 480px) {
-    .main-container {
+  @media (max-width: 400px) {
+   /* .main-container {
       width: 100%; /* Full width for smaller screens */
-      padding: 10px;
-    }
-  }
+     /* padding: 10px; 
+  }*/
   .btn{
-    width: 6rem;
-    height: 6rem;
+    flex-basis: calc(50% - 10px);
   }
+  }
+  
   .display-screen {
     height: 60px;
     width: auto;
@@ -58,24 +60,38 @@ body {
     margin-right: 1.4vw;
     border: 2px solid black;
   }
+  .rows {
+    display: flex;
+    flex-direction: row;
+  }
+  
   .btns {
     display: flex;
    
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #F5F5F5;
+    /* justify-content: space-evenly;
+    align-items: center; */
+    background-color: #7E6363;
+    
     margin: 2px;
-    gap: 2px;
+    gap: 10px;
     
 .btn {
-    font-size: 2rem;
-    color: #041820;
-
+    /* font-size: 2rem;
+    color: #041820; */
+    width: 6rem;
+    height: 6rem;
+    padding: 10px 20px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  text-align: center;
+  flex-grow: 1; /* Allow buttons to grow to fill available space */
+  margin: 5px; /* Optional: adds space between buttons */
+  flex-basis: calc(25% - 10px); /* 4 buttons per row, adjusted for gap */
 }
 
   }
-  #zero {
+  #zero, #ac {
     width: 12rem;
 
   }
@@ -92,5 +108,5 @@ body {
  }
 .rows {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
