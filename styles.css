@@ -43,7 +43,7 @@ body {
   
   @media (max-width: 480px) {
     .main-container {
-      width: 100%; /* Full width for smaller screens */
+      width: 80%; /* Full width for smaller screens */
       padding: 10px;
     }
   }
