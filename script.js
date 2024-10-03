@@ -36,10 +36,6 @@
         
         return (input1 / input2);
     }
-    function percent(input1) {
-        return (input1 / 100);
-    }
-
     function operate(input1, input2, operator) {
         switch(operator) {
             case '+':
@@ -54,10 +50,7 @@
             case '/':
                 return divide(input1, input2);
                 break;
-            case '%':
-                return percent(input1);
-                break;
-            }       
+            }
         }
 
     function isFloat(number) {
