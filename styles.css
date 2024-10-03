@@ -1,11 +1,12 @@
 body {
   background-color: #B9B4C7;
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-    width: 90%; /* Take up 90% of the viewport width */
+  .calculator {
+    
     max-width: 400px; /* Maximum width for larger screens */
     height: auto; /* Automatically adjust height */
     margin: 0 auto; /* Center the div horizontally */
@@ -38,19 +39,20 @@ body {
   
   @media (min-width: 768px) {
     .main-container {
-      width: 60%; /* Slightly reduce the width for larger screens */
-      max-width: 500px;
+      width: 80%; /* Slightly reduce the width for larger screens */
+      /* max-width: 500px; */
     }
   }
   
   @media (max-width: 400px) {
-   /* .main-container {
+    .main-container {
       width: 100%; /* Full width for smaller screens */
-     /* padding: 10px; 
-  }*/
+      padding: 10px; 
+  }
   .btn{
     flex-basis: calc(50% - 10px);
   }
+   
   }
   
   .display-screen {
@@ -62,7 +64,7 @@ body {
   }
   .rows {
     display: flex;
-    flex-direction: row;
+    
   }
   
   .btns {
@@ -79,31 +81,30 @@ body {
 .btn {
     /* font-size: 2rem;
     color: #041820; */
-    width: 6rem;
-    height: 6rem;
+    width: 3.5rem;
+    height: 3.5rem;
     padding: 10px 20px;
-  background-color: #ddd;
+  background-color: #b3dfdf;
   border: 1px solid #ccc;
   text-align: center;
-  flex-grow: 1; /* Allow buttons to grow to fill available space */
+  font-size: 1.15rem;
+  flex-grow: 1; /*Allow buttons to grow to fill available space*/
   margin: 5px; /* Optional: adds space between buttons */
-  flex-basis: calc(25% - 10px); /* 4 buttons per row, adjusted for gap */
+  /* flex-basis: calc(25% - 10px);  */
 }
-
+  .btn.operations {
+    background-color: #ffb74d;
   }
-  #zero, #ac {
-    width: 12rem;
+  }
+    .btn#zero, .btn#ac {
+    width: 8rem;
 
   }
   .number {
     background-color: #80CBC4;
  }
 
- .operations {
-    background-color: #ffb74d;
-
- }
- .ac-items {
+ .btn.ac-items, #equal {
     background-color: #CE93D8;
  }
 .rows {
